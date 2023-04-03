@@ -1,7 +1,7 @@
 import React from 'react'
 
-function HelloPage() {
+function Hello() {
   return <h1>Hello Page</h1>
 }
 
-export default HelloPage
+export default Hello
