@@ -26,7 +26,7 @@ const Home: NextPage<{characters: Character[]}> = ({characters}) => {
         characters.map((character:any) => {
           return <div key={character.id}>
             <Link href={`/characters/${character.id}`}>
-              <h3 className='text-2xl text-center hover:text-red-400'>{character.name}</h3>
+              <h2 className='text-2xl text-center text-slate-950 hover:text-red-400'>{character.name}</h2>
             </Link>
             
             <Image loader={imageLoader} unoptimized src={character.image} alt={character.name} width={200} height={200} className='mx-auto rounded-full' />
