@@ -10,10 +10,16 @@ export default function CharacterPage({character}:{character: Character}) {
   console.log(router.query)
   
   return (
-    <div>
-      <h1>{character.name}</h1>
+    <div className='flex flex-col items-center'>
+      <h1 className='text-2xl text-red-400 pb-4'>{character.name}</h1>
       
-      <Image loader={imageLoader} unoptimized src={character.image} alt={character.name} width={200} height={200} />
+      <Image loader={imageLoader} unoptimized src={character.image} alt={character.name} width={200} height={200} className='rounded-full' />
+      
+      <span>Status: {character.status}</span>
+      <span>Specie: {character.species}</span>
+      <span>Gender: {character.gender}</span>
+      <span>Origin: {character.origin.name}</span>
+      <span>Location: {character.location.name}</span>
     </div>
   )
 }

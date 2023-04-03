@@ -16,17 +16,24 @@ const Home: NextPage<{characters: Character[]}> = ({characters}) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      
+      <h1 className="text-5xl py-8 font-bold underline text-center text-red-400">
+        Hello world!
+      </h1>
+      
+      <div className='grid gap-4 grid-cols-2 px-2 md:grid-cols-3 md:gap-8 lg:grid-cols-4'>
       {
         characters.map((character:any) => {
           return <div key={character.id}>
             <Link href={`/characters/${character.id}`}>
-              <h3>{character.name}</h3>
+              <h3 className='text-2xl text-center hover:text-red-400'>{character.name}</h3>
             </Link>
             
-            <Image loader={imageLoader} unoptimized src={character.image} alt={character.name} width={200} height={200} />
+            <Image loader={imageLoader} unoptimized src={character.image} alt={character.name} width={200} height={200} className='mx-auto rounded-full' />
           </div>
         })
       }
+      </div>
     </>
   )
 }
